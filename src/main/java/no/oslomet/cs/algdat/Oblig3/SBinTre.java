@@ -146,7 +146,16 @@ public class SBinTre<T> {
     }
 
     private static <T> Node<T> førstePostorden(Node<T> p) {
-        throw new UnsupportedOperationException("Ikke kodet ennå!");
+        while (p.venstre != null) {
+            p = p.venstre;
+        }
+        while (p.høyre != null) {
+            p = p.høyre;
+            while (p.venstre != null) {
+                p = p.venstre;
+            }
+        }
+        return p;
     }
 
     private static <T> Node<T> nestePostorden(Node<T> p) {
