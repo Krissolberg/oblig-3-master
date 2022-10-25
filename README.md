@@ -11,4 +11,4 @@ I oppgave 1 kopierte jeg kildekoden som var spesifisert i oppgaven. Deretter sto
 så referansen forelder får rett verdi i hver node. Det var rød strek under opprett av ny node så jeg la en ekstra input
 som var det den spurte om.
 
-I oppgave 2 så brukte jeg en ... til å ...
+I oppgave 2 

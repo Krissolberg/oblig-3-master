@@ -118,7 +118,13 @@ public class SBinTre<T> {
     }
 
     public int antall(T verdi) {
-        throw new UnsupportedOperationException("Ikke kodet ennå!");
+        if (verdi == null) {
+            return 0;
+        }
+        if (tom()){
+            return 0;
+        }
+        int teller = 0;
     }
 
     public void nullstill() {
