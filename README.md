@@ -19,6 +19,12 @@ I oppgave 3 skal jeg finne første postorden. Vi vet at ved å tegne opp et bin�
 til venstre hvis det  finnes venstrebarn. Hvis det ikke finnes venstrebarn så går man til høyre og sjekker alle nodene
 for om de har venstrebarn. Hvis det ikke finnes venstrebarn så er nederste høyrebarn førstepostorden, hvis rot ikke har
 barn så er rot førstepostorden. 
+I nestePostOrden så sjekka jeg først om p sin forelder er null. Hvis den er null så er p rot og nestePostOrden 
+er da null. Så lagra jeg broren til p så jeg kunne bruke den senere. Dette gjorde jeg ved å ta p.forelder.høyre. 
+Så sjekka jeg om broren til p er null for hvis den er det så vet jeg at p sin forelder er nestePostOrden. 
+Jeg fant en bug i koden etter masse debugging fordi den gikk i loop og jeg skjønte ikke hvor. Til slutt klarte jeg å 
+løse det ved å sjekke om p == q. Hvis dette er tilfellet så er nestePostOrden også p sin forelder. Til slutt går jeg ned
+hele venstresiden.
 
 I oppgave 4 så koda jeg først postorden-metoden ved å bruke førstePostorden og nestePostorden og utføre oppgave.
 I postordenRecursive så sjekker jeg først om p er lik null og så kjører jeg postordenRecursive igjen mot venstre side 
