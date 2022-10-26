@@ -19,3 +19,7 @@ I oppgave 3 skal jeg finne første postorden. Vi vet at ved å tegne opp et bin�
 til venstre hvis det  finnes venstrebarn. Hvis det ikke finnes venstrebarn så går man til høyre og sjekker alle nodene
 for om de har venstrebarn. Hvis det ikke finnes venstrebarn så er nederste høyrebarn førstepostorden, hvis rot ikke har
 barn så er rot førstepostorden. 
+
+I oppdage 4 så koda jeg først postorden-metoden ved å bruke førstePostorden og nestePostorden og utføre oppgave.
+I postordenRecursive så sjekker jeg først om p er lik null og så kjører jeg postordenRecursive igjen mot venstre side 
+og så mot høyre, og til slutt oppgave utført. 

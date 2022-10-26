@@ -1,10 +1,7 @@
 package no.oslomet.cs.algdat.Oblig3;
 
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.Objects;
-import java.util.StringJoiner;
+import java.util.*;
 
 public class SBinTre<T> {
     private static final class Node<T>   // en indre nodeklasse
@@ -110,7 +107,46 @@ public class SBinTre<T> {
     }
 
     public boolean fjern(T verdi) {
-        throw new UnsupportedOperationException("Ikke kodet ennå!");
+
+        // Mangler å endre koden så foreldre får riktige peker etter fjerning
+
+        if (verdi == null) return false;  // treet har ingen nullverdier
+
+        Node<T> p = rot, q = null;   // q skal være forelder til p
+
+        while (p != null)            // leter etter verdi
+        {
+            int cmp = comp.compare(verdi,p.verdi);      // sammenligner
+            if (cmp < 0) { q = p; p = p.venstre; }      // går til venstre
+            else if (cmp > 0) { q = p; p = p.høyre; }   // går til høyre
+            else break;    // den søkte verdien ligger i p
+        }
+        if (p == null) return false;   // finner ikke verdi
+
+        if (p.venstre == null || p.høyre == null)  // Tilfelle 1) og 2)
+        {
+            Node<T> b = p.venstre != null ? p.venstre : p.høyre;  // b for barn
+            if (p == rot) rot = b;
+            else if (p == q.venstre) q.venstre = b;
+            else q.høyre = b;
+        }
+        else  // Tilfelle 3)
+        {
+            Node<T> s = p, r = p.høyre;   // finner neste i inorden
+            while (r.venstre != null)
+            {
+                s = r;    // s er forelder til r
+                r = r.venstre;
+            }
+
+            p.verdi = r.verdi;   // kopierer verdien i r til p
+
+            if (s != p) s.venstre = r.høyre;
+            else s.høyre = r.høyre;
+        }
+
+        antall--;   // det er nå én node mindre i treet
+        return true;
     }
 
     public int fjernAlle(T verdi) {
@@ -197,13 +233,35 @@ public class SBinTre<T> {
         oppgave.utførOppgave(p.verdi);
     }
 
-    public ArrayList<T> serialize() {
-        throw new UnsupportedOperationException("Ikke kodet ennå!");
+    public ArrayList<T> serialize(SBinTre rot) {
+
+        int[] array = {};
+
+        ArrayDeque<SBinTre> queue = new ArrayDeque<SBinTre>();
+
+        queue.addLast(rot);
+
+
+
+        while (!queue.isEmpty()) {
+            SBinTre p = queue.removeFirst();
+
+            if (p.venstre != null) {
+                queue.addLast(current.venstre);
+            }
+            if (p.høyre != null) {
+                queue.addLast(current.høyre);
+            }
+
+
+        }
+
+
+
     }
 
     static <K> SBinTre<K> deserialize(ArrayList<K> data, Comparator<? super K> c) {
         throw new UnsupportedOperationException("Ikke kodet ennå!");
     }
-
 
 } // ObligSBinTre
