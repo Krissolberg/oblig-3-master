@@ -15,10 +15,10 @@ Oppgave 2 løste jeg ved å kjøre et par tester for så å bruke store deler av
 samme som metoden jeg lager skal gjøre. Måtte endre litt på koden da inneholder returnerer true or false, og jeg ønsker
 å telle for hvert tilfelle istedet.
 
-I oppgave 3 skal jeg finne første postorden. Vi vet at ved å tegne opp et binært tre så er første post orden lengst ned
-til venstre hvis det  finnes venstrebarn. Hvis det ikke finnes venstrebarn så går man til høyre og sjekker alle nodene
-for om de har venstrebarn. Hvis det ikke finnes venstrebarn så er nederste høyrebarn førstepostorden, hvis rot ikke har
-barn så er rot førstepostorden. 
+I oppgave 3 skal jeg finne førstepostorden og nestePostOrden. Vi vet at ved å tegne opp et binært tre så er første post 
+orden lengst ned til venstre hvis det  finnes venstrebarn. Hvis det ikke finnes venstrebarn så går man til høyre og 
+sjekker alle nodene for om de har venstrebarn. Hvis det ikke finnes venstrebarn så er nederste høyrebarn 
+førstepostorden, hvis rot ikke har barn så er rot førstepostorden. 
 I nestePostOrden så sjekka jeg først om p sin forelder er null. Hvis den er null så er p rot og nestePostOrden 
 er da null. Så lagra jeg broren til p så jeg kunne bruke den senere. Dette gjorde jeg ved å ta p.forelder.høyre. 
 Så sjekka jeg om broren til p er null for hvis den er det så vet jeg at p sin forelder er nestePostOrden. 
