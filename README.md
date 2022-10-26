@@ -20,6 +20,10 @@ til venstre hvis det  finnes venstrebarn. Hvis det ikke finnes venstrebarn så g
 for om de har venstrebarn. Hvis det ikke finnes venstrebarn så er nederste høyrebarn førstepostorden, hvis rot ikke har
 barn så er rot førstepostorden. 
 
-I oppdage 4 så koda jeg først postorden-metoden ved å bruke førstePostorden og nestePostorden og utføre oppgave.
+I oppgave 4 så koda jeg først postorden-metoden ved å bruke førstePostorden og nestePostorden og utføre oppgave.
 I postordenRecursive så sjekker jeg først om p er lik null og så kjører jeg postordenRecursive igjen mot venstre side 
 og så mot høyre, og til slutt oppgave utført. 
+
+I oppgave 5 serialize-metoden brukte jeg bredde først traversering for å traversere igjennom treet og legge hver enkelt
+node inn i et array. I deserialize-metoden så lagde jeg et tre, og løp igjennom arrayet og brukte leggInn-metoden til
+treet for å legge inn hver index fra arrayet inn i treet. 
