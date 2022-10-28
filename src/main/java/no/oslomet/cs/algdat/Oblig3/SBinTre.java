@@ -165,10 +165,20 @@ public class SBinTre<T> {
         if (q == null || p == q)
             return p.forelder;
 
+        q = traverserVenstre(q);
+
+        while(q.høyre != null) {
+            q = q.høyre;
+            q = traverserVenstre(q);
+        }
+
+        return q;
+    }
+
+    private static <T> Node<T> traverserVenstre(Node<T> q) {
         while(q.venstre != null) {
             q = q.venstre;
         }
-
         return q;
     }
 
